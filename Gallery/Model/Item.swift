@@ -44,11 +44,11 @@ struct Item: Identifiable {
     var description: String = ""
     var technique: Technique = .oilOnCanvas
     var dimension: Dimension = Dimension()
-    var imageName: String = ""
+    var imageName: String = "default"
     var dateCreated: Date = Date()
     var currentStatus: Status = .inDeposit
     
-    init(name: String = "", description: String = "", technique: Technique = .oilOnCanvas, dimension: Dimension = Dimension(), imageName: String = "", dateCreated: Date = Date(), currentStatus: Status = .inDeposit) {
+    init(name: String = "", description: String = "", technique: Technique = .oilOnCanvas, dimension: Dimension = Dimension(), imageName: String = "default", dateCreated: Date = Date(), currentStatus: Status = .inDeposit) {
         self.name = name
         self.description = description
         self.technique = technique

@@ -8,7 +8,5 @@
 import SwiftUI
 
 class ItemsViewViewModel: ObservableObject {
-//    @Published var itemsList = [Item]()
-    @Published var itemsList = MockData.items
     @Published var showingNewItemView = false
 }
