@@ -8,5 +8,7 @@
 import SwiftUI
 
 class ItemsViewViewModel: ObservableObject {
-    @Published var showingNewItemView = false
+    @Published var isShowingNewItemView = false
+    @Published var isShowingItemDetailView = false
+    @Published var selectedItem: Item?
 }

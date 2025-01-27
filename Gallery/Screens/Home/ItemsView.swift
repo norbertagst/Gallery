@@ -15,20 +15,27 @@ struct ItemsView: View {
         NavigationView {
             List(galleryViewModel.items) { item in
                 ItemListCell(item: item)
+                    .onTapGesture {
+                        viewModel.selectedItem = item
+                        viewModel.isShowingItemDetailView = true
+                    }
             }
             .listStyle(.plain)
             .navigationTitle("Gallery")
             .toolbar {
                 Button {
                     print("Add new Item")
-                    viewModel.showingNewItemView = true
+                    viewModel.isShowingNewItemView = true
                 } label: {
                     Image(systemName: "plus")
                 }
             }
         }
-        .sheet(isPresented: $viewModel.showingNewItemView) {
-            NewItemView(newItemPresented: $viewModel.showingNewItemView)
+        .sheet(isPresented: $viewModel.isShowingNewItemView) {
+            NewItemView(newItemPresented: $viewModel.isShowingNewItemView)
+        }
+        .sheet(isPresented: $viewModel.isShowingItemDetailView) {
+            ItemDetailsView(selectedItem: viewModel.selectedItem, isShowingItemDetailView: $viewModel.isShowingItemDetailView)
         }
     }
 }
