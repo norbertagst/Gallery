@@ -13,6 +13,10 @@ struct Dimension {
     var width: Int = 1
     var height: Int = 1
     
+    var description: String {
+       return "\(width) x \(height) cm"
+    }
+    
     init(width: Int = 1, height: Int = 1) {
         self.width = width
         self.height = height
@@ -36,6 +40,15 @@ enum Technique {
 enum Status {
     case inDeposit
     case borrowed(orderID: UUID)
+    
+    var description: String {
+        switch self {
+        case .inDeposit:
+            "In deposit"
+        case .borrowed(let orderID):
+            "Borrowed on order \(orderID)"
+        }
+    }
 }
 
 struct Item: Identifiable {
