@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct GalleryApp: App {
+    @StateObject private var galleryViewModel = GalleryViewModel()
+
     var body: some Scene {
         WindowGroup {
             GalleryTabView()
+                .environmentObject(galleryViewModel)
         }
     }
 }

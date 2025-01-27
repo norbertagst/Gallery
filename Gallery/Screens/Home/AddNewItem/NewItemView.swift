@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct NewItemView: View {
+    @EnvironmentObject var galleryViewModel: GalleryViewModel
     @State var newItem = Item()
     @State var showTechniqueDialog = false
     @Binding var newItemPresented: Bool
@@ -50,6 +51,7 @@ struct NewItemView: View {
             }
             
             actionButton(buttonTitle: "Save Item") {
+                galleryViewModel.addNewItemToGallery(with: newItem.name, description: newItem.description)
                 newItemPresented = false
             }
         }

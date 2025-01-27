@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct ItemsView: View {
+    @EnvironmentObject var galleryViewModel: GalleryViewModel
     @StateObject var viewModel = ItemsViewViewModel()
     
     var body: some View {
         NavigationView {
-            List(viewModel.itemsList) { item in
+            List(galleryViewModel.items) { item in
                 ItemListCell(item: item)
             }
             .listStyle(.plain)

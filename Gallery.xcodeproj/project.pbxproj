@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C9287F0D2D47978800C12489 /* GalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9287F0C2D47978800C12489 /* GalleryViewModel.swift */; };
 		C950877D2D3A7E580025177D /* NewItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C950877C2D3A7E580025177D /* NewItemView.swift */; };
 		C95087802D3A90980025177D /* Date+DateFromatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = C950877F2D3A90980025177D /* Date+DateFromatting.swift */; };
 		C9E833E92D39283300636728 /* GalleryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E833E82D39283300636728 /* GalleryApp.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C9287F0C2D47978800C12489 /* GalleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewModel.swift; sourceTree = "<group>"; };
 		C950877C2D3A7E580025177D /* NewItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemView.swift; sourceTree = "<group>"; };
 		C950877F2D3A90980025177D /* Date+DateFromatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+DateFromatting.swift"; sourceTree = "<group>"; };
 		C9E833E52D39283300636728 /* Gallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +113,7 @@
 		C9E833F62D39285800636728 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				C9287F0C2D47978800C12489 /* GalleryViewModel.swift */,
 				C9E833FB2D39293200636728 /* GalleryTabView.swift */,
 				C9E833FA2D3928A600636728 /* Contacts */,
 				C9E833F92D39288200636728 /* Orders */,
@@ -251,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C950877D2D3A7E580025177D /* NewItemView.swift in Sources */,
+				C9287F0D2D47978800C12489 /* GalleryViewModel.swift in Sources */,
 				C9E834002D39297500636728 /* OrdersView.swift in Sources */,
 				C95087802D3A90980025177D /* Date+DateFromatting.swift in Sources */,
 				C9E833FE2D39295F00636728 /* ContactsView.swift in Sources */,
