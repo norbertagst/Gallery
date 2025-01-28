@@ -9,7 +9,15 @@ import Foundation
 
 struct Contact: Identifiable {
     let id = UUID()
-    let name: String
-//    let location: String
-    var currentOrder: UUID
+    var name: String
+    var organisation: String
+    var imageName: String
+    var currentOrder: UUID?
+    
+    init(name: String = "", organisation: String = "", imageName: String = "defaultUser", currentOrder: UUID? = nil) {
+        self.name = name
+        self.organisation = organisation
+        self.currentOrder = currentOrder
+        self.imageName = imageName
+    }
 }

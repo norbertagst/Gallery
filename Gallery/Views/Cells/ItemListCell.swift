@@ -20,7 +20,7 @@ struct ItemListCell: View {
             VStack(alignment: .leading) {
                 Text(item.name)
                 Text(item.technique.description)
-                Text("Size \(item.dimension.width) x \(item.dimension.height)")
+                Text("\(item.dimension.width) x \(item.dimension.height) cm")
             }
         }
     }
