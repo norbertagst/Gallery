@@ -49,12 +49,16 @@ struct MockData {
     
     //Contact
     static let contact = Contact(name: "John Doe", organisation: "MET")
-    
     static let contact1 = Contact(name: "John Doe", organisation: "MET")
     static let contact2 = Contact(name: "Jane Doe", organisation: "ART")
     static let contact3 = Contact(name: "John Dere")
     static let contact4 = Contact(name: "Black Adder", organisation: "England")
-
     static let contacts = [contact1, contact2, contact3, contact4]
+    
+    //Order
+    static let order1 = Order(beneficiary: contact1.id)
+    static let order2 = Order(beneficiary: contact2.id)
+    static let order3 = Order(beneficiary: contact4.id)
+    static let orders = [order1, order2, order3]
 }
 

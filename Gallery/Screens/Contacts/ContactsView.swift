@@ -34,13 +34,9 @@ struct ContactsView: View {
         .sheet(isPresented: $viewModel.isShowingNewContactView) {
             NewContactView(newContactPresented: $viewModel.isShowingNewContactView)
         }
-//        .sheet(isPresented: $viewModel.isShowingItemDetailView) {
-//            ItemDetailsView(selectedItem: viewModel.selectedItem, isShowingItemDetailView: $viewModel.isShowingItemDetailView)
-//        }
     }
 }
 
 #Preview {
     ContactsView()
 }
-
