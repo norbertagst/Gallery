@@ -9,6 +9,6 @@ import Foundation
 
 struct Order: Identifiable {
     let id = UUID()
-    let beneficiary: UUID // A contact's UUID
-    let items: [Item]
+    var beneficiary: UUID? // A contact's UUID
+    var items = [Item]()
 }
