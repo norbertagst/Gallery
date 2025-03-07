@@ -14,9 +14,9 @@ struct OrderDetailsView: View {
     var body: some View {
         VStack {
             Text("Order Id: \(order.id.uuidString)")
-            Text("Beneficiary: \(order.beneficiary?.uuidString ?? "No Beneficiary")")
+            Text("Beneficiary: \(galleryViewModel.beneficiaryName(for: order.beneficiary))")
             Text("Items in order: \(order.items.count)")
-            Text("Order description: \(order.description)")
+            Text("Order notes: \(order.notes)")
             
             List {
                 ForEach(order.items) { item in
@@ -26,8 +26,7 @@ struct OrderDetailsView: View {
             .listStyle(.plain)
                         
             actionButton(buttonTitle: "Close Order") {
-                galleryViewModel.restoreItemsToDeposit(items: order.items)
-                galleryViewModel.removeAllItemsFromOrder(order)
+                galleryViewModel.closeOrder(order)
                 dismiss()
             }
         }

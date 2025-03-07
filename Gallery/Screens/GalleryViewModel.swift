@@ -28,6 +28,7 @@ class GalleryViewModel: ObservableObject {
             return
         }
         let newOrder = Order(beneficiary: beneficiary)
+        // TODO: update beneficiary Current order
         orders.append(newOrder)
     }
     
@@ -61,9 +62,26 @@ class GalleryViewModel: ObservableObject {
         }
     }
     
-    func removeAllItemsFromOrder(_ order: Order) {
-        if let index = orders.firstIndex(where: { $0.id == order.id }) {
-            orders[index].items.removeAll()
-        }
+    // TODO: might need this if we allow one by one removal of an item from an order
+//    func removeAllItemsFromOrder(_ order: Order) {
+//        if let index = orders.firstIndex(where: { $0.id == order.id }) {
+//            orders[index].items.removeAll()
+//        }
+//    }
+    
+    func removeOrder(_ order: Order) {
+        // TODO: update beneficiary Current order
+        orders.removeAll { $0.id == order.id }
+    }
+    
+    func closeOrder(_ order: Order) {
+        restoreItemsToDeposit(items: order.items)
+        removeOrder(order)
+    }
+    
+    func getOrderDescription(for order: Order) -> String {
+        let orderIdPrefix = String(order.id.uuidString.prefix(4))
+        let beneficiaryName = beneficiaryName(for: order.beneficiary)
+        return "Order \(orderIdPrefix) - \(beneficiaryName)"
     }
 }

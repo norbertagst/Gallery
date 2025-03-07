@@ -87,17 +87,22 @@ struct ItemsView: View {
                         }
                         
                         Button {
-                            viewModel.isEditing.toggle()
-                            isTabBarHidden.toggle()
-                            
+                            if galleryViewModel.orders.count > 0 {
+                                withAnimation {
+                                    viewModel.isEditing.toggle()
+                                    isTabBarHidden.toggle()
+                                }
+                            } else {
+                                print("There is no order. Create an order first.")
+                            }
                         } label: {
                             if viewModel.isEditing {
                                 Text("Done")
                             } else {
                                 Image(systemName: "checkmark.circle")
+                                    .opacity(galleryViewModel.orders.count > 0 ? 1 : 0.5)
                             }
                         }
-                        
                     }
                 }
             }
@@ -115,10 +120,14 @@ struct ItemsView: View {
             
             addToOrderAction = {
                 print("Add to Order")
-                galleryViewModel.addItems(selectedItems: viewModel.selectedItems,
-                                          toOrder: selectedOrderID)
-                
-                viewModel.selectedItems.removeAll()
+                if viewModel.selectedItems.count > 0 {
+                    galleryViewModel.addItems(selectedItems: viewModel.selectedItems,
+                                              toOrder: selectedOrderID)
+                    
+                    viewModel.selectedItems.removeAll()
+                } else {
+                    print("No Items were selected. Please select items.")
+                }
             }
         }
     }
@@ -130,13 +139,13 @@ struct SelectOrderView: View {
     var selectedItems: Set<Item>
     
     var body: some View {
-        Text("You selected \(selectedItems.map { $0.name })")
+//        Text("You selected \(selectedItems.map { $0.name })")
         Picker("Select an Order", selection: Binding(
             get: { selectedOrderID ?? galleryViewModel.orders.first?.id },
             set: { selectedOrderID = $0 }
         )) {
             ForEach(galleryViewModel.orders) { order in
-                Text(order.beneficiary?.uuidString ?? "No benificiary")
+                Text(galleryViewModel.getOrderDescription(for: order))
                     .tag(order.id as UUID?)
             }
         }
