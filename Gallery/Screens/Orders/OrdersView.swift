@@ -14,7 +14,7 @@ struct OrdersView: View {
     var body: some View {
         NavigationView {
             List(galleryViewModel.orders) { order in
-                OrderListCell(beneficiaryName: galleryViewModel.beneficiaryName(for: order.beneficiary))
+                OrderListCell(order: order)
                     .onTapGesture {
                         viewModel.selectedOrder = order
                         viewModel.isShowingOrderDetailsView = true

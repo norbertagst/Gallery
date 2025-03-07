@@ -8,13 +8,22 @@
 import SwiftUI
 
 struct OrderListCell: View {
-    let beneficiaryName: String
+    @EnvironmentObject var galleryViewModel: GalleryViewModel
+    let order: Order
     
     var body: some View {
-        Text(beneficiaryName)
+        VStack {
+            Text(galleryViewModel.beneficiaryName(for: order.beneficiary))
+                .font(.title)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            Text("\(order.items.count)")
+                .font(.title3)
+                .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        
     }
 }
 
 #Preview {
-    OrderListCell(beneficiaryName: "")
+    OrderListCell(order: MockData.order1)
 }

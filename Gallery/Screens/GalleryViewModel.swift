@@ -40,11 +40,18 @@ class GalleryViewModel: ObservableObject {
         return beneficiaryName
     }
     
-//    func beneficiaryNames() -> [String] { // still you might need to identify the selected contact/beneficiary
-//        
-//    }
-    
-//    func removeFromCart(_ product: Product) {
-//        items.removeAll { $0.id == product.id }
-//    }
+    func addItems(selectedItems: Set<Item>, toOrder orderID: UUID?) {
+        let items = Array(selectedItems)
+        guard let orderID else {
+            return
+        }
+        
+        for i in items.indices {
+            items[i].currentStatus = .borrowed(orderID: orderID)
+        }
+        
+        if let index = orders.firstIndex(where: { $0.id == orderID }) {
+            orders[index].items.append(contentsOf: items)
+        }
+    }
 }

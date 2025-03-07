@@ -7,8 +7,9 @@
 
 import Foundation
 
-struct Order: Identifiable {
+struct Order: Identifiable, Hashable {
     let id = UUID()
     var beneficiary: UUID? // A contact's UUID
     var items = [Item]()
+    var description: String = "AAA"
 }
