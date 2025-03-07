@@ -11,5 +11,5 @@ struct Order: Identifiable, Hashable {
     let id = UUID()
     var beneficiary: UUID? // A contact's UUID
     var items = [Item]()
-    var description: String = "AAA"
+    var notes: String = "AAA"
 }
