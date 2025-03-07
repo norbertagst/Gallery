@@ -12,16 +12,17 @@ struct OrdersView: View {
     @StateObject var viewModel = OrdersViewViewModel()
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List(galleryViewModel.orders) { order in
-                OrderListCell(order: order)
-                    .onTapGesture {
-                        viewModel.selectedOrder = order
-                        viewModel.isShowingOrderDetailsView = true
-                    }
+                NavigationLink(value: order) {
+                    OrderListCell(order: order)
+                }
             }
             .listStyle(.plain)
             .navigationTitle("Orders")
+            .navigationDestination(for: Order.self) { order in
+                OrderDetailsView(order: order)
+            }
             .toolbar {
                 Button {
                     print("Add new Order")

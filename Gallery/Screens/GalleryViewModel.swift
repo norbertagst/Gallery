@@ -54,4 +54,16 @@ class GalleryViewModel: ObservableObject {
             orders[index].items.append(contentsOf: items)
         }
     }
+    
+    func restoreItemsToDeposit(items: [Item]) {
+        for item in items {
+            item.currentStatus = .inDeposit
+        }
+    }
+    
+    func removeAllItemsFromOrder(_ order: Order) {
+        if let index = orders.firstIndex(where: { $0.id == order.id }) {
+            orders[index].items.removeAll()
+        }
+    }
 }

@@ -12,7 +12,7 @@ struct ContactsView: View {
     @StateObject var viewModel = ContactsViewViewModel()
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List(galleryViewModel.contacts) { contact in
                 ContactListCell(contact: contact)
                     .onTapGesture {
