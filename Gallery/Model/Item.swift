@@ -37,7 +37,7 @@ enum Technique {
     }
 }
 
-enum Status {
+enum Status: Equatable {
     case inDeposit
     case borrowed(orderID: UUID)
     
@@ -51,7 +51,24 @@ enum Status {
     }
 }
 
-struct Item: Identifiable {
+extension Status {
+    var isBorrowed: Bool {
+        if case .borrowed = self {
+            return true
+        }
+        return false
+    }
+}
+
+class Item: Identifiable, Hashable {
+    static func == (lhs: Item, rhs: Item) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
     let id = UUID()
     var name: String = ""
     var description: String = ""
