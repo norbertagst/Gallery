@@ -25,14 +25,14 @@ struct ContactsView: View {
             .toolbar {
                 Button {
                     print("Add new Contact")
-                    viewModel.isShowingNewContactView = true
+                    viewModel.isShowingNewContactView.toggle()
                 } label: {
                     Image(systemName: "plus")
                 }
             }
         }
         .sheet(isPresented: $viewModel.isShowingNewContactView) {
-            NewContactView(newContactPresented: $viewModel.isShowingNewContactView)
+            NewContactView()
         }
     }
 }

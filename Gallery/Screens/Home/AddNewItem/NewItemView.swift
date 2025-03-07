@@ -9,9 +9,9 @@ import SwiftUI
 
 struct NewItemView: View {
     @EnvironmentObject var galleryViewModel: GalleryViewModel
+    @Environment(\.dismiss) private var dismiss
     @State var newItem = Item()
     @State var showTechniqueDialog = false
-    @Binding var newItemPresented: Bool
     
     var body: some View {
         VStack {
@@ -52,12 +52,9 @@ struct NewItemView: View {
             
             actionButton(buttonTitle: "Save Item") {
                 galleryViewModel.addNewItemToGallery(with: newItem.name, description: newItem.description)
-                newItemPresented = false
+                dismiss()
             }
         }
-//        let dimension: Dimension
-//        let imageName: String
-//        let dateCreated: Date
     }
 }
 
@@ -81,5 +78,5 @@ struct actionButton: View {
 }
 
 #Preview {
-    NewItemView(newItemPresented: .constant(false))
+    NewItemView()
 }

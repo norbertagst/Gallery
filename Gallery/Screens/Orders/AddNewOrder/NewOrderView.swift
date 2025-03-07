@@ -9,9 +9,9 @@ import SwiftUI
 
 struct NewOrderView: View {
     @EnvironmentObject var galleryViewModel: GalleryViewModel
+    @Environment(\.dismiss) private var dismiss
     @State var beneficiaryName: String = ""
     @State var beneficiaryID: UUID?
-    @Binding var newOrderPresented: Bool
     @State private var selectedBeneficiary: Contact = Contact()
     
     var body: some View {
@@ -33,7 +33,7 @@ struct NewOrderView: View {
             }
             actionButton(buttonTitle: "Save Order") {
                 galleryViewModel.addNewOrderToGallery(with: selectedBeneficiary.id)
-                newOrderPresented = false
+                dismiss()
             }
         }
         .onAppear {
@@ -47,5 +47,5 @@ struct NewOrderView: View {
 }
 
 #Preview {
-    NewOrderView(newOrderPresented: .constant(true))
+    NewOrderView()
 }

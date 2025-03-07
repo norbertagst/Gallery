@@ -25,14 +25,14 @@ struct OrdersView: View {
             .toolbar {
                 Button {
                     print("Add new Order")
-                    viewModel.isShowingNewOrderView = true
+                    viewModel.isShowingNewOrderView.toggle()
                 } label: {
                     Image(systemName: "plus")
                 }
             }
         }
         .sheet(isPresented: $viewModel.isShowingNewOrderView) {
-            NewOrderView(newOrderPresented: $viewModel.isShowingNewOrderView)
+            NewOrderView()
         }
     }
 }

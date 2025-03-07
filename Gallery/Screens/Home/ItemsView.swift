@@ -81,7 +81,7 @@ struct ItemsView: View {
                     .toolbar {
                         Button {
                             print("Add new Item")
-                            viewModel.isShowingNewItemView = true
+                            viewModel.isShowingNewItemView.toggle()
                         } label: {
                             Image(systemName: "plus")
                         }
@@ -103,7 +103,7 @@ struct ItemsView: View {
             }
         }
         .sheet(isPresented: $viewModel.isShowingNewItemView) {
-            NewItemView(newItemPresented: $viewModel.isShowingNewItemView)
+            NewItemView()
         }
         .sheet(isPresented: $viewModel.isShowingItemDetailView) {
             ItemDetailsView(selectedItem: viewModel.selectedItem, isShowingItemDetailView: $viewModel.isShowingItemDetailView)
