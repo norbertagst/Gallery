@@ -9,8 +9,8 @@ import SwiftUI
 
 struct NewContactView: View {
     @EnvironmentObject var galleryViewModel: GalleryViewModel
+    @Environment(\.dismiss) private var dismiss
     @State var newContact = Contact()
-    @Binding var newContactPresented: Bool
     
     var body: some View {
         VStack {
@@ -29,13 +29,13 @@ struct NewContactView: View {
             
             actionButton(buttonTitle: "Save Contact") {
                 galleryViewModel.addNewContactToGallery(with: newContact.name, organisation: newContact.organisation)
-                newContactPresented = false
+                dismiss()
             }
         }
     }
 }
 
 #Preview {
-    NewContactView(newContactPresented: .constant(false))
+    NewContactView()
 }
 

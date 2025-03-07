@@ -14,10 +14,9 @@ struct OrderListCell: View {
     var body: some View {
         VStack {
             Text(galleryViewModel.beneficiaryName(for: order.beneficiary))
-                .font(.title)
                 .frame(maxWidth: .infinity, alignment: .leading)
-            Text("\(order.items.count)")
-                .font(.title3)
+            Text("Items in order: \(order.items.count)")
+                .font(.caption)
                 .frame(maxWidth: .infinity, alignment: .leading)
         }
         
