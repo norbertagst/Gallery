@@ -61,14 +61,6 @@ extension Status {
 }
 
 class Item: Identifiable, Hashable {
-    static func == (lhs: Item, rhs: Item) -> Bool {
-        return lhs.id == rhs.id
-    }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-    
     let id = UUID()
     var name: String = ""
     var description: String = ""
@@ -86,5 +78,13 @@ class Item: Identifiable, Hashable {
         self.imageName = imageName
         self.dateCreated = dateCreated
         self.currentStatus = currentStatus
+    }
+    
+    static func == (lhs: Item, rhs: Item) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 }

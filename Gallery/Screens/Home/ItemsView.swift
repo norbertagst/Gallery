@@ -33,7 +33,7 @@ struct ItemsView: View {
     
     var body: some View {
         ZStack(alignment: .bottom) {
-            NavigationView {
+            NavigationStack {
                 VStack {
                     if viewModel.isEditing {
                         SelectOrderView(selectedOrderID: $selectedOrderID,

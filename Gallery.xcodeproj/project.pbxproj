@@ -19,6 +19,7 @@
 		C93255DF2D48F2FA00C61148 /* NewOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93255DE2D48F2FA00C61148 /* NewOrderView.swift */; };
 		C950877D2D3A7E580025177D /* NewItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C950877C2D3A7E580025177D /* NewItemView.swift */; };
 		C95087802D3A90980025177D /* Date+DateFromatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = C950877F2D3A90980025177D /* Date+DateFromatting.swift */; };
+		C996A0D82D7AEAE900D8A55A /* OrderDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C996A0D72D7AEAE900D8A55A /* OrderDetailsView.swift */; };
 		C9E833E92D39283300636728 /* GalleryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E833E82D39283300636728 /* GalleryApp.swift */; };
 		C9E833EB2D39283300636728 /* ItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E833EA2D39283300636728 /* ItemsView.swift */; };
 		C9E833ED2D39283900636728 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9E833EC2D39283900636728 /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		C93255DE2D48F2FA00C61148 /* NewOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrderView.swift; sourceTree = "<group>"; };
 		C950877C2D3A7E580025177D /* NewItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemView.swift; sourceTree = "<group>"; };
 		C950877F2D3A90980025177D /* Date+DateFromatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+DateFromatting.swift"; sourceTree = "<group>"; };
+		C996A0D72D7AEAE900D8A55A /* OrderDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsView.swift; sourceTree = "<group>"; };
 		C9E833E52D39283300636728 /* Gallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E833E82D39283300636728 /* GalleryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryApp.swift; sourceTree = "<group>"; };
 		C9E833EA2D39283300636728 /* ItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsView.swift; sourceTree = "<group>"; };
@@ -122,6 +124,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		C996A0D62D7AEAD600D8A55A /* OrderDetails */ = {
+			isa = PBXGroup;
+			children = (
+				C996A0D72D7AEAE900D8A55A /* OrderDetailsView.swift */,
+			);
+			path = OrderDetails;
+			sourceTree = "<group>";
+		};
 		C9E833DC2D39283300636728 = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +196,7 @@
 		C9E833F92D39288200636728 /* Orders */ = {
 			isa = PBXGroup;
 			children = (
+				C996A0D62D7AEAD600D8A55A /* OrderDetails */,
 				C93255DD2D48F2EC00C61148 /* AddNewOrder */,
 				C9E833FF2D39297500636728 /* OrdersView.swift */,
 				C93255D92D48E6E800C61148 /* OrdersViewViewModel.swift */,
@@ -334,6 +345,7 @@
 				C9287F152D48D39600C12489 /* ContactsViewViewModel.swift in Sources */,
 				C9E834052D392F3E00636728 /* Contact.swift in Sources */,
 				C9E834102D3934AC00636728 /* ItemListCell.swift in Sources */,
+				C996A0D82D7AEAE900D8A55A /* OrderDetailsView.swift in Sources */,
 				C9287F132D47E74900C12489 /* XDismissButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
